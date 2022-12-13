@@ -1,0 +1,55 @@
+-- Projeto Lab
+
+-- Etapa 2
+
+CREATE DATABASE Bclub;
+use Bclub;
+
+
+CREATE TABLE Utilizador (
+	ID			INTEGER			NOT NULL,
+	UserName	VARCHAR(60)		NOT NULL,
+	Passe		VARCHAR(15)		NOT NULL,
+	Nome		VARCHAR(60)		NOT NULL,
+	Email		VARCHAR(60)		NOT NULL,
+	Foto		VARCHAR(60)				,
+	Cargo		VARCHAR(60)				,
+	PRIMARY KEY(ID)
+);
+
+
+CREATE TABLE Cliente	(
+	Uti_ID			INTEGER			NOT NULL,
+	Status_Email	TINYINT			NOT NULL,
+	Status_Conta	TINYINT			NOT NULL,
+	FOREIGN KEY(Uti_ID) REFERENCES Utilizador(ID),
+	PRIMARY KEY(Uti_ID)
+
+);
+
+CREATE TABLE Jogo		(
+	ID				INTEGER			NOT NULL,
+	Nome			VARCHAR(60)		NOT NULL,
+	Descricao		VARCHAR(500)	NOT NULL,
+	Produtora		VARCHAR(60)		NOT NULL,
+	Preco			MONEY			NOT NULL,
+	Foto			VARCHAR(60)		NOT NULL,
+	Status_jogo		TINYINT			NOT NULL,
+	Requisitos		VARCHAR,
+	PRIMARY KEY(ID)
+);
+
+CREATE TABLE Plataforma	(
+	ID				INTEGER			NOT NULL,
+	Nome			VARCHAR(20)		NOT NULL,
+	PRIMARY KEY(ID)
+);
+
+
+CREATE TABLE Categoria	(
+	ID				INTEGER			NOT NULL,
+	Nome			VARCHAR(20)		NOT NULL,
+	PRIMARY KEY(ID)
+);
+
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Teste2.Models.Contacto>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+
+<table class="table">
+    <thead>
+        @{
+            ViewData["Title"] = "Lista1";
+        }
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NicKname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amigo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NicKname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amigo)
+                </td>
+                <td>
+                    <a asp-action="Alterar" asp-route-id="@item.Email">Alterar</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
