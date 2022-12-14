@@ -1,0 +1,23 @@
+﻿<Window x:Class="Ex3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="LAbel" Grid.Row="0" FontSize="20" Margin="519,55,54,10">O saldo atual e:</Label>
+        
+        <Button x:Name="BTSair" Content="Sair" VerticalAlignment="Center" HorizontalAlignment="Left" Width="83" Margin="55,0,0,0" Height="38" Grid.Row="0" ></Button>
+        <Button x:Name="BTMovimento" Content="Registar Movimento" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="180,0,0,0" Height="38" Grid.Row="0" Click="BTMovimento_Click" ></Button>
+        <ListView Grid.Row="1" x:Name="LV">
+            
+        </ListView>
+    </Grid>
+</Window>

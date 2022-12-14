@@ -1,0 +1,4 @@
+﻿1234567;Os cinco;Domingos Teixeira;2022
+1231311;Diario de um Banana; Gabriel Xilro;2011
+6666666;Criptomoedas; Windoh; 2019
+1237766;Tiagovski o Rei dos Ceus;Tiago Saramago;2015

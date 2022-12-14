@@ -1,0 +1,111 @@
+use master;
+use Biblioteca_T2_2022;
+SELECT * FROM Alunos;
+SELECT * FROM Emprestimo;
+SELECT * FROM Livro;
+INSERT INTO Alunos VALUES (73235,'Antonio','Rua da Taga','4600-756','Amarante',1121);
+INSERT INTO Livro VALUES (1,'Bruno Carvalho','Bruno Carvalho',getDate(),'Sobe',1);
+
+--ex 7.1 a
+
+CREATE PROCEDURE setEstado @nLivro INTEGER, @Estado BIT AS
+	UPDATE Livro
+	SET estado = @estado
+	WHERE numero = @nLivro;
+
+--Executar
+EXECUTE setEstado 1,1;
+
+--ex 7.1 b
+
+CREATE PROCEDURE getEstado @nLivro INTEGER AS
+	RETURN(
+		SELECT estado
+		FROM Livro
+		WHERE numero = @nLivro);
+
+--Executar 
+DECLARE @estado BIT;
+EXECUTE @estado = getEstado 1;
+PRINT(@estado)
+
+--ex 7.1 c
+CREATE PROCEDURE verificarREQ @nAluno INTEGER AS
+	if(	
+		((SELECT COUNT(Numero_Livro) AS nLivros
+		FROM Emprestimo
+		WHERE  Numero_Aluno = @nAluno
+		AND Data_Entrega IS NULL)*5
+		<
+		(SELECT Garantia
+		FROM Alunos
+		WHERE Numero_Mecanografico = @nAluno))
+		<
+		5
+	  )
+		return 1;
+	  else
+		return 0;
+--Executar 
+DECLARE @podeReq BIT;
+EXECUTE @podeReq = verificarREQ 1;
+PRINT(@podeReq)
+
+--ex 7.1 d
+
+CREATE PROCEDURE inserirREQ @numAluno INTEGER, @numLivro INTEGER AS
+	DECLARE  @LivroDisponivel BIT
+	EXECUTE @LivroDisponivel = getEstado @numLivro;
+	IF(@LivroDisponivel <> 1)
+		RETURN 0;
+
+	DECLARE  @alunoPode BIT
+	EXECUTE @alunoPode = verificarREQ @numAluno;
+	IF(@alunoPode <> 1)
+		RETURN 0;
+
+	EXECUTE setEstado @numLivro,1;
+	INSERT INTO Emprestimo VALUES (@numAluno,@numLivro,getdate(),NULL)
+
+	RETURN 1;
+	
+	--ex 7.1 e
+CREATE PROCEDURE 	EntreguarLiv @numAluno INTEGER, @numLivro INTEGER, @datareq DATE , @dataent DATE AS
+	UPDATE Emprestimo
+	set data_entrega = getdate()
+	WHERE Numero_Mecanografico = @numAluno
+	AND	Numero_Livro = @numLivro
+	AND	Data_Requisicao = @datareq;
+	
+EXECUTE EntreguarLiv 12348,1,'2022/05/01'	
+
+	
+	--ex 7.1 f
+CREATE PROCEDURE 	VerificarEnt @numLivro INTEGER AS
+		
+		IF EXISTS( 	SELECT * FROM Emprestimo 
+					WHERE Numero_Livro = @numLivro
+					AND Data_Entrega IS NULL
+					AND Data_Requisicao IS NOT NULL
+			
+			) RETURN 1;
+		ELSE
+			RETURN 0;
+	
+--7.1 g
+CREATE PROCEDURE 	CorrectLiv @numLivro INTEGER AS
+		
+		DECLARE @FLAG BIT
+		EXECUTE @FLAG = VerificarEnt @numLivro;
+		UPDATE Livro SET estado = @FLAG WHERE numero = @numLivro;
+			--IF(@FLAG = 1)
+				--UPDATE Livro SET Estado = 1 WHERE numero = @numLivro;
+			--ELSE
+			--UPDATE Livro SET Estado = 1 WHERE numero = @numLivro;
+			
+			
+CREATE TRIGGER UpdateEstado_1
+ON Emprestimo
+AFTER INSERT
+AS
+
