@@ -1,0 +1,5 @@
+C:\Users\Tiago Fernandes\Desktop\Tiago\uni\p3\EX_extra02\EX_extra02\obj\Debug\net6.0-windows\EX_extra02.csproj.AssemblyReference.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\uni\p3\EX_extra02\EX_extra02\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Tiago Fernandes\Desktop\Tiago\uni\p3\EX_extra02\EX_extra02\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Tiago Fernandes\Desktop\Tiago\uni\p3\EX_extra02\EX_extra02\obj\Debug\net6.0-windows\EX_extra02_MarkupCompile.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\uni\p3\EX_extra02\EX_extra02\obj\Debug\net6.0-windows\EX_extra02_MarkupCompile.lref

@@ -1,0 +1,51 @@
+﻿<Window x:Class="Utad.p3.Aula003.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Utad.p3.Aula003"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "200"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" ></ColumnDefinition>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Content="Introduzir valor 1: " Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Height="46" Width="112" Margin="0,97,0,0"/>
+        <Label Content="Introduzir valor 2: " HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Height="22" Width="110" Margin="0,235,0,0"/>
+        <Label Content="O Resultado é: " Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Bold" Margin="0,56,4,0" Height="22" Width="92"></Label>
+
+
+        <TextBox x:Name="TBbox1" Grid.Row="0" Grid.Column="1"  Margin="35,97,464,122"></TextBox>
+        <TextBox x:Name="TBbox2" Grid.Column="1"  Margin="35,228,464,0"/>
+        <TextBox x:Name="TBbox3" Grid.Row="1" Grid.Column="1"  Margin="35,34,464,189" IsEnabled="False"/>
+
+        <Button Content="Somar" Grid.Column="1" Margin="89,134,671,101" Grid.Row="1" Click="Button_Click" />
+        <Button Content="Limpar" Grid.Column="1" Margin="253,134,518,101" Grid.Row="1" Click="BT_clean_Click" />
+
+
+        <ComboBox  x:Name="Cb1" Grid.Column="1" HorizontalAlignment="Left" Margin="494,118,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.496,0.708"/>
+        
+        <ListBox x:Name="Lb1"   Grid.Column="1"  Margin="494,229,253,167" Grid.RowSpan="2"/>
+
+        <TreeView  x:Name="Tv1"   Grid.Column="1" HorizontalAlignment="Left" Height="132" Margin="706,232,0,0" VerticalAlignment="Top" Width="103" Grid.RowSpan="2"/>
+
+        <ListView  x:Name="Lv1"   Grid.Column="1" HorizontalAlignment="Left" Height="132" Margin="699,75,0,0" VerticalAlignment="Top" Width="135">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>

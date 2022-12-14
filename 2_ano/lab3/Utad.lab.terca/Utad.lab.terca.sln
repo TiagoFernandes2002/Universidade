@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utad.lab.terca.001", "Utad.lab.terca.001\Utad.lab.terca.001.csproj", "{DF03BE8E-89DF-4E07-8F88-D844803CAFC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF03BE8E-89DF-4E07-8F88-D844803CAFC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF03BE8E-89DF-4E07-8F88-D844803CAFC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF03BE8E-89DF-4E07-8F88-D844803CAFC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF03BE8E-89DF-4E07-8F88-D844803CAFC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93D1B06F-3B80-4130-B106-22C82523E174}
+	EndGlobalSection
+EndGlobal
