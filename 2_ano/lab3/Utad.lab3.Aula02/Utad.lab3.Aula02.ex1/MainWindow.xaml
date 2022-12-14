@@ -1,0 +1,20 @@
+﻿<Window x:Class="Utad.Lab._3.Ex2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Utad.Lab._3.Ex2"
+        mc:Ignorable="d"
+        Title="LPDSW Aula 2" Height="100" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="Url" Content="URL" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="TBUrl" Grid.Row="0" Grid.Column="1" Text="https:\\" Margin="0,29,0,29"/>
+        <Button x:Name="BTGo" Grid.Row="0" Grid.Column="2" Content="Go" Height="30" Width="30" Click="BTGo_Click"/>
+    </Grid>
+</Window>

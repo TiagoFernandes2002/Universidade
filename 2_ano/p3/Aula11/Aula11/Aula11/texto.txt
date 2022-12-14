@@ -1,3 +1,0 @@
-12358;Rui Silva;INF;Inscrito
-18234;Joao Miguel;TIC;Inscrito
-10654;Joana Santos;INF;NaoInscrito

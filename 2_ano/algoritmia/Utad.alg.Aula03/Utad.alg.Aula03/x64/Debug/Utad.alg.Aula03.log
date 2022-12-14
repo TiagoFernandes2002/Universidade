@@ -1,9 +1,0 @@
-﻿  Utad.alg.Aula03.cpp
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(68,7): warning C4101: 'aux': unreferenced local variable
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(333,9): warning C4477: 'scanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(355,8): warning C4476: 'scanf' : unknown type field character ' ' in format specifier
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(355,16): warning C4474: 'scanf' : too many arguments passed for format string
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(355,16): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(152): warning C4715: 'ReadLine': not all control paths return a value
-C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\Utad.alg.Aula03\Utad.alg.Aula03.cpp(411): warning C4715: 'InsertMid': not all control paths return a value
-  Utad.alg.Aula03.vcxproj -> C:\Users\Tiago Fernandes\Desktop\Tiago\uni\algoritmia\Utad.alg.Aula03\x64\Debug\Utad.alg.Aula03.exe
