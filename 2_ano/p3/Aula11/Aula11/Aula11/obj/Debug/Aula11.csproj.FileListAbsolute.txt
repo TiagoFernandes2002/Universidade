@@ -1,3 +1,0 @@
-C:\Users\Tiago Fernandes\Desktop\Nova pasta\Aula11\Aula11\obj\Debug\Aula11.csproj.AssemblyReference.cache
-C:\Users\Tiago Fernandes\Desktop\Nova pasta\Aula11\Aula11\obj\Debug\Aula11.csproj.SuggestedBindingRedirects.cache
-C:\Users\Tiago Fernandes\Desktop\Nova pasta\Aula11\Aula11\obj\Debug\Aula11.csproj.CoreCompileInputs.cache
