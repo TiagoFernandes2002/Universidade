@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Teste_2.Models.BolsaInvestigacao>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+    <a asp-action="Adiciona">Criar Nova</a>
+</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td id="a_@item.Id">
+               <a asp-action="Filtro" asp-route-id="@item.Id"
+            data-ajax="true" data-ajax-method="post"
+            data-ajax-mode="replace" data-ajax-update="#a_@item.Id">
+               @Html.DisplayFor(modelItem => item.Area)</a>
+            </td>
+            @*<td >
+               @Html.DisplayFor(modelItem => item.Area)
+            </td>*@
+           
+                <td id="f_@item.Id">
+                    <a asp-route-id="@item.Id" asp-action="Detalhes"
+                   data-ajax="true" data-ajax-method="post"
+                   data-ajax-mode="replace" data-ajax-update="#f_@item.Id">Detalhes</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

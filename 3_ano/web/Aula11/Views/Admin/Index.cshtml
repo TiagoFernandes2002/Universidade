@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Aula11.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<form asp-action="Create">
+    <input type="text" name="NewName" />
+    <input type="submit" value="Create" class="" />
+</form>
+
+Data: @DateTime.Now
+<hr />
+
+<partial name="Listing" model="Model" />
+
+<hr />
+Data: @DateTime.Now
+
+

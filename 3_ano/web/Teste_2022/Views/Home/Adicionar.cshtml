@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Teste_2022.Models.Filme>
+
+@foreach (var item in Model)
+{
+    <tr id="f_@item.Id">
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duracao)
+        </td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <td>
+                <a asp-route-id="@item.Id" asp-action="Delete" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#f_@item.Id" data-ajax-confirm="Are you sure ?">Delete</a>
+            </td>
+            <td>
+                <a asp-route-id="@item.Id" asp-action="Adicionar"
+           data-ajax="true" data-ajax-method="post"
+           data-ajax-mode="replace" data-ajax-update="#f_@item.Id">+</a>
+            </td>
+        }
+    </tr>
+}

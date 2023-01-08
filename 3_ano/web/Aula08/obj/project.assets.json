@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\uni\\3_ano\\web\\Aula08\\Aula08.csproj",
+      "projectUniqueName": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\universidade\\universidade\\3_ano\\web\\Aula08\\Aula08.csproj",
       "projectName": "Aula08",
-      "projectPath": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\uni\\3_ano\\web\\Aula08\\Aula08.csproj",
+      "projectPath": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\universidade\\universidade\\3_ano\\web\\Aula08\\Aula08.csproj",
       "packagesPath": "C:\\Users\\Tiago Fernandes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\uni\\3_ano\\web\\Aula08\\obj\\",
+      "outputPath": "C:\\Users\\Tiago Fernandes\\Desktop\\Tiago\\universidade\\universidade\\3_ano\\web\\Aula08\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Teste_2022.Models.Filme>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Jogos</h1>
+
+<partial name="Listing" model="Model" />
+
+@if (Context.Request.Cookies["alreadyDeleted"] == User.Identity.Name){
+    <div>already deleted</div>
+}

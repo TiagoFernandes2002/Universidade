@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Teste_2.Models.BolsaInvestigacao>
+
+
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracao)
+            </td>
+            <td>
+                €   durante 
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Remuneracao)
+            </td>
+            <td>
+                 meses
+            </td>
+            
+        </tr>
+}

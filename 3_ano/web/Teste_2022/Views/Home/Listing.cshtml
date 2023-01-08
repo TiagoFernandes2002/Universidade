@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Teste_2022.Models.Filme>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+    <a asp-action="AddFilme">Adicionar Novo Filme</a>
+    </p>
+}
+<table id="" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr id="t_@item.Id">
+            <td id="n_@item.Id">
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td id="f_@item.Id">
+                @Html.DisplayFor(modelItem => item.Duracao)
+            </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    @if (Context.Request.Cookies["alreadyDeleted"] != User.Identity.Name)
+                    {
+
+                        <td>
+                            <a asp-route-id="@item.Id" asp-action="Delete" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#t_@item.Id" data-ajax-confirm="Are you sure ?">Delete</a>
+                        </td>
+                    }
+                    <td>
+                        <a asp-route-id="@item.Id" asp-action="Adicionar" 
+                        data-ajax="true" data-ajax-method="post"
+                        data-ajax-mode="replace" data-ajax-update="#f_@item.Id" >+</a>
+                    </td>
+                    <td>
+                        <a asp-route-id="@item.Id" asp-action="Edit"
+                   data-ajax="true" data-ajax-method="get"
+                   data-ajax-mode="replace" data-ajax-update="#n_@item.Id">edit</a>
+                    </td>
+                }
+        </tr>
+}
+    </tbody>
+</table>

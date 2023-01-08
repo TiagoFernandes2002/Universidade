@@ -37,6 +37,11 @@ namespace Aula08.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Cookie_crls()
+        {
+          http
+        }
+
         public IActionResult DeleteCookies()
         {
             //delete all cookies from response (and cliente)
