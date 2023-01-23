@@ -1,0 +1,212 @@
+// Circulos.cpp : Exercício com as estruturas CIRCULO e PONTO
+// Vetores de estruturas
+// Carregamento dos dados dos circulos gerados aleatoriamente
+// Reserva de memória dinamica para vetores de estruturas
+// Ordenação pelo valor do raio
+// Pesquisa pelo valor do raio
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+typedef struct
+{
+	int x;
+	int y;
+}PONTO;
+
+typedef struct
+{
+	PONTO centro;
+	int raio;
+}CIRCULO;
+
+int GeraNumAleatorio(int min, int max)
+{
+	int n;
+
+	n = min + rand() % (max - min);
+
+	return  n;
+}
+
+void Troca(CIRCULO *a, CIRCULO *b)
+{
+	CIRCULO aux;
+	aux = *a;
+	*a = *b;
+	*b = aux;
+}
+
+void OrdenaSelRaioCrescente(CIRCULO *V, int N)
+{
+	int i, j, min;
+
+	for (i = 0; i < N - 1; i++)
+	{
+		min = i;
+		for (j = i + 1; j < N; j++)
+			if (V[min].raio > V[j].raio)
+				min = j;
+
+		if (min != i)
+		{
+			Troca((V + min), (V + i));
+		}
+	}
+}
+
+void OrdenaBolRaioCrescente(CIRCULO *V, int N)
+{
+	int i, j;
+	bool flag;
+
+	flag = true;
+	i = 0;
+	while ((i < N - 1) && (flag == true))
+	{
+		flag = false;
+		for (j = 0; j<(N - 1) - i; j++)
+			if (V[j].raio > V[j + 1].raio)
+			{
+				//	Troca(&V[j], &V[j+1]);
+				Troca(V + j, V + j + 1);
+				flag = true;
+			}
+		i++;
+	}
+}
+
+int PesquisaLinearRaio(CIRCULO *V, int N, int Raio)
+{
+	int i = 0;
+
+	while (i<N)
+	{
+		if (V[i].raio == Raio)
+			return i;
+
+		i++;
+	}
+
+	return -1;
+}
+
+int PesquisaBinariaRaio(CIRCULO *V, int N, int Raio)
+{
+	int a = N - 1, b = 0, m;
+	bool flag = false;
+
+	while ((b < a) && (flag == false))
+	{
+		m = (a - b) / 2 + b;
+		if (V[m].raio < Raio)
+			b = m + 1;
+		else
+		{
+			if (V[m].raio > Raio)
+				a = m - 1;
+			else
+				flag = true;
+		}
+	}
+
+	if ((a == b) && (Raio == V[b].raio))
+	{
+		flag = true;
+		m = b;
+	}
+
+	if (flag == true)
+		return m;
+	else
+		return -1;
+}
+
+int main(int argc, char* argv[])
+{
+	int i, N = 10, raio, indice;
+	CIRCULO C[10], *C1;
+	FILE *F;
+
+	// Gera uma nova semente para que a sequência de dados gerados aleatóriamente
+	// seja diferente da anterior
+	srand((int)time(NULL));
+
+	// Carrega os circulos com dados gerados aleatóriamente
+	for (i = 0; i < N; i++)
+	{
+		C[i].centro.x = GeraNumAleatorio(50, 100); // Gera um número entre 50 e 100
+		C[i].centro.y = GeraNumAleatorio(50, 100); // Gera um número entre 50 e 100
+		C[i].raio = GeraNumAleatorio(10, 35); // Gera um número entre 10 e 35
+	}
+
+	// Cria o ficheiro Circulos.txt em modo de escrita e associa-o a F
+	if ((F = fopen("Circulos.txt", "w")) == NULL) {
+		printf("ERRO: não é possível abrir o ficheiro Circulos.txt\n");
+		system("pause");
+		exit(1);
+	}
+	else
+		printf("\tFicheiro ""Circulos.txt"" criado com sucesso\n\n");
+
+
+	// Grava no ficheiro "Circulos.txt" o número de circulos
+	fprintf(F, "%d\n", N);
+
+	// Grava no ficheiro "Circulos.txt" os dados dos circulos do vetor de estruturas C
+	for (i = 0; i < N; i++)
+		fprintf(F, "%d %d %d\n", C[i].centro.x, C[i].centro.y, C[i].raio);
+
+	// Fecha o ficheiro "Circulos.txt"
+	fclose(F);
+	//----------------
+
+	// abre o ficheiro Circulos.txt no modo de leitura e associa-o a F
+	if ((F = fopen("Circulos.txt", "r")) == NULL) {
+		printf("ERRO: não é possível abrir o ficheiro Circulos.txt\n");
+		system("pause");
+		exit(1);
+	}
+
+	// Lê o número de circulos, do ficheiro "Circulos.txt", para a variável N
+	fscanf(F, "%d", &N);
+
+	// Cria o vetor C1 dinamicamente com a dimensão N
+	if ((C1 = (CIRCULO *)malloc(N * sizeof(CIRCULO))) == NULL) {
+		printf("ERRO: não é possível criar o vetor de circulos\n");
+		system("pause");
+		exit(1);
+	}
+
+	// Carrega no vetor C1 os dados dos circulos guardados no ficheiro "Circulos.txt"
+	for (i = 0; i < N; i++)
+		fscanf(F, "%d %d %d", &(C1[i].centro.x), &(C1[i].centro.y), &(C1[i].raio));
+
+	// Fecha o ficheiro "Circulos.txt"
+	fclose(F);
+
+	// Ordena os circulos do vetor de estruturas C1 por ordem crescente do seu "Raio"
+	OrdenaBolRaioCrescente(C1, N);
+
+	// Apresenta no ecrã os dados dos circulos do vetor de estruturas C1,
+	// ordenados por ordem crescente
+	printf("\tCirculos odenados por ordem crescente do valor do raio\n");
+	for (i = 0; i < N; i++)
+		printf("\tCentro (%d,%d) Raio = %d\n", C1[i].centro.x, C1[i].centro.y, C1[i].raio);
+
+	// Pesquisa Circulo com raio 14 no Vetor C1
+	raio = 14;
+	indice = PesquisaLinearRaio(C1, N, raio);
+
+	if (indice >= 0)
+		printf("\n\tCirculo com raio %d encontrado no vetor C1 na posição: %d\n", raio, indice);
+	else
+		printf("\n\tCirculo com raio %d não encontrado no vetor C1\n", raio);
+
+	free(C1);
+	system("pause");
+	return 0;
+}
