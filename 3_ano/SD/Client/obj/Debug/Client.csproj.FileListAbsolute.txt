@@ -1,0 +1,8 @@
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\bin\Debug\Client.exe.config
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\bin\Debug\Client.exe
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\bin\Debug\Client.pdb
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\obj\Debug\Client.exe
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\Client\obj\Debug\Client.pdb
