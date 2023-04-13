@@ -1,36 +1,39 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
-class TcpClientExample
+class Program
 {
     static void Main(string[] args)
     {
-        // Set the server's IP address and port
-        string serverIP = "25.57.70.173"; // localhost
-        int serverPort = 8888;
-
-        // Create a TCP client socket and connect to the server
+        // Connect to the server
         TcpClient client = new TcpClient();
-        client.Connect(IPAddress.Parse(serverIP), serverPort);
+        client.Connect(IPAddress.Parse("25.56.196.102"), 8888);
 
-        // Get a network stream object for reading and writing data
-        NetworkStream stream = client.GetStream();
+        // Send messages to the server
+        while (true)
+        {
+            Console.Write("Enter a message to send to the server: ");
+            string message = Console.ReadLine();
 
-        // Send a message to the server
-        string message = "Hello, server!";
-        byte[] messageBytes = System.Text.Encoding.ASCII.GetBytes(message);
-        stream.Write(messageBytes, 0, messageBytes.Length);
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                break;
+            }
 
-        // Receive a response from the server
-        byte[] buffer = new byte[1024];
-        int bytesRead = stream.Read(buffer, 0, buffer.Length);
-        string response = System.Text.Encoding.ASCII.GetString(buffer, 0, bytesRead);
+            byte[] data = Encoding.ASCII.GetBytes(message);
+            NetworkStream stream = client.GetStream();
+            stream.Write(data, 0, data.Length);
 
-        Console.WriteLine("Server response: " + response);
+            // Receive response from the server
+            data = new byte[1024];
+            int bytesRead = stream.Read(data, 0, data.Length);
+            string response = Encoding.ASCII.GetString(data, 0, bytesRead);
+            Console.WriteLine("Server response: {0}", response);
+        }
 
-        // Close the client socket and stream objects
-        stream.Close();
+        // Close the connection
         client.Close();
     }
 }

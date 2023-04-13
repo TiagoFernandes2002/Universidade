@@ -1,0 +1,8 @@
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Tiago Fernandes\Desktop\Tiago\universidade\universidade\3_ano\SD\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
